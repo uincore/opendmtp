@@ -156,7 +156,7 @@ sockserv_exe: OPTIONS+=-DENABLE_SERVER_SOCKET
 sockserv_exe: $(MISSING) sockserv_dirs $(TOOLS_OBJ) $(SKSERVE_OBJ)
 	@echo ""
 	@echo "Linking 'sockserv' ..."
-	$(CC) -o $(OBJ_DIR)/server/sockserv$(EXE_EXT) $(CFLAGS) $(SOLIBS) $(TOOLS_OBJ) $(SKSERVE_OBJ)
+	$(CC) -o $(OBJ_DIR)/server/sockserv$(EXE_EXT) $(CFLAGS) $(SOLIBS) $(TOOLS_OBJ) $(SKSERVE_OBJ) -lm -lpthread
 	@echo ""
 	@echo "Stripping 'sockserv' ..."
 	$(STRIP) $(OBJ_DIR)/server/sockserv$(EXE_EXT)
@@ -182,7 +182,7 @@ scomserv_dirs: $(MISSING)
 scomserv_exe: $(MISSING) tools scomserv_dirs $(SCSERVE_OBJ)
 	@echo ""
 	@echo "Linking 'scomserv' ..."
-	$(CC) -o $(OBJ_DIR)/server/scomserv$(EXE_EXT) $(CFLAGS) $(SOLIBS) $(SCSERVE_OBJ) -L$(LIB_DIR) -ltools
+	$(CC) -o $(OBJ_DIR)/server/scomserv$(EXE_EXT) $(CFLAGS) $(SOLIBS) $(SCSERVE_OBJ) -L$(LIB_DIR) -ltools -lm -lpthread
 	@echo ""
 	@echo "Stripping 'scomserv' ..."
 	$(STRIP) $(OBJ_DIR)/server/scomserv$(EXE_EXT)
@@ -219,7 +219,7 @@ parsefile_dirs: $(MISSING)
 parsefile_exe: $(MISSING) tools parsefile_dirs $(PARSFIL_OBJ)
 	@echo ""
 	@echo "Linking 'parsfile' ..."
-	$(CC) -o $(OBJ_DIR)/parsfile/parsfile$(EXE_EXT) $(CFLAGS) $(SOLIBS) $(PARSFIL_OBJ) -L$(LIB_DIR) -ltools
+	$(CC) -o $(OBJ_DIR)/parsfile/parsfile$(EXE_EXT) $(CFLAGS) $(SOLIBS) $(PARSFIL_OBJ) -L$(LIB_DIR) -ltools -lm
 	@echo ""
 	@echo "Stripping 'parsfile' ..."
 	$(STRIP) $(OBJ_DIR)/parsfile/parsfile$(EXE_EXT)

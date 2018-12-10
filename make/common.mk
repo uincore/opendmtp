@@ -51,7 +51,8 @@ ifeq ($(findstring lin,$(dest)),lin)
   RANLIB    = ranlib
   STRIP     = strip
   CFLAGS    = -Wall -DTARGET_LINUX $(XPORT_MEDIA) $(OPTIONS) -Isrc
-  SOLIBS    = $(LINUX_LIBS)/libpthread.so $(LINUX_LIBS)/libm.so
+#SOLIBS    = $(LINUX_LIBS)/libpthread.so $(LINUX_LIBS)/libm.so
+  SOLIBS    =
   EXE_EXT   =
 endif
 ifeq ($(findstring cyg,$(dest)),cyg)
@@ -79,7 +80,8 @@ OBJ_DIR     = $(BUILD_DIR)/obj
 LIB_DIR     = $(OBJ_DIR)/lib
 
 # --- base libaries
-ALIBS       = -L$(LIB_DIR) -lmodule -lbase -ltools
+#ALIBS       = -L$(LIB_DIR) -lmodule -lbase -ltools
+ALIBS       = -L$(LIB_DIR) -lmodule -lbase -ltools -lm -lpthread
 
 # -----------------------------------------------------------------------------
 
