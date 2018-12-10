@@ -1,0 +1,2608 @@
+# Microsoft eMbedded Visual Tools Project File - Name="DMTP" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE ARMV4) Application" 0xa301
+# TARGTYPE "Win32 (WCE emulator) Application" 0xa601
+
+CFG=DMTP - Win32 (WCE emulator) Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "DMTP.VCN".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "DMTP.VCN" CFG="DMTP - Win32 (WCE emulator) Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "DMTP - Win32 (WCE emulator) Release" (based on "Win32 (WCE emulator) Application")
+!MESSAGE "DMTP - Win32 (WCE emulator) Debug" (based on "Win32 (WCE emulator) Application")
+!MESSAGE "DMTP - Win32 (WCE ARMV4) Release" (based on "Win32 (WCE ARMV4) Application")
+!MESSAGE "DMTP - Win32 (WCE ARMV4) Debug" (based on "Win32 (WCE ARMV4) Application")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+# PROP ATL_Project 2
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "emulatorRel"
+# PROP BASE Intermediate_Dir "emulatorRel"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "emulatorRel"
+# PROP Intermediate_Dir "emulatorRel"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "i_386_" /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /Yu"stdafx.h" /Gs8192 /GF /O2 /c
+# ADD CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "i_386_" /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "TARGET_WINCE_PHONE" /Yu"stdafx.h" /Gs8192 /GF /O2 /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) aygshell.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) aygshell.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "emulatorDbg"
+# PROP BASE Intermediate_Dir "emulatorDbg"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "emulatorDbg"
+# PROP Intermediate_Dir "emulatorDbg"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d "$(CePlatform)" /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d "$(CePlatform)" /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "_X86_" /d "x86" /d "_i386_" /r
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D "_i386_" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "i_386_" /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /Yu"stdafx.h" /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Od /D "DEBUG" /D "_i386_" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "i_386_" /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "TARGET_WINCE_PHONE" /Yu"stdafx.h" /Gs8192 /GF /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) aygshell.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) aygshell.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "ARMV4Rel"
+# PROP BASE Intermediate_Dir "ARMV4Rel"
+# PROP BASE CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 2
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "ARMV4Rel"
+# PROP Intermediate_Dir "ARMV4Rel"
+# PROP CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "NDEBUG" /d "UNICODE" /d "_UNICODE" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /d "ARMV4" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "NDEBUG" /d "UNICODE" /d "_UNICODE" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /d "ARMV4" /d "_AFXDLL" /r
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D "ARMV4" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "NDEBUG" /Yu"stdafx.h" /O2 /M$(CECrtMT) /c
+# ADD CPP /nologo /W3 /I "." /I "./src" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D "ARMV4" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "NDEBUG" /D "TARGET_WINCE_PHONE" /D "_AFXDLL" /YX /O2 /M$(CECrtMT) /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib aygshell.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /MACHINE:ARM
+# ADD LINK32 commctrl.lib coredll.lib corelibc.lib aygshell.lib ws2.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /MACHINE:ARM
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "ARMV4Dbg"
+# PROP BASE Intermediate_Dir "ARMV4Dbg"
+# PROP BASE CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "ARMV4Dbg"
+# PROP Intermediate_Dir "ARMV4Dbg"
+# PROP CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "DEBUG" /d "UNICODE" /d "_UNICODE" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /d "ARMV4" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "DEBUG" /d "UNICODE" /d "_UNICODE" /d "$(CePlatform)" /d "ARM" /d "_ARM_" /d "ARMV4" /r
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D "ARM" /D "_ARM_" /D "ARMV4" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "UNICODE" /D "_UNICODE" /Yu"stdafx.h" /M$(CECrtMTDebug) /c
+# ADD CPP /nologo /W3 /Zi /Od /I "." /I "./src" /D "DEBUG" /D "ARM" /D "_ARM_" /D "ARMV4" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "UNICODE" /D "_UNICODE" /D "TARGET_WINCE_PHONE" /Yu"stdafx.h" /M$(CECrtMTDebug) /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib aygshell.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /debug /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /MACHINE:ARM
+# ADD LINK32 commctrl.lib coredll.lib corelibc.lib aygshell.lib ws2.lib /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"WinMainCRTStartup" /debug /nodefaultlib:"$(CENoDefaultLib)" /subsystem:$(CESubsystem) /align:"4096" /MACHINE:ARM
+
+!ENDIF 
+
+# Begin Target
+
+# Name "DMTP - Win32 (WCE emulator) Release"
+# Name "DMTP - Win32 (WCE emulator) Debug"
+# Name "DMTP - Win32 (WCE ARMV4) Release"
+# Name "DMTP - Win32 (WCE ARMV4) Debug"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Group "base"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\src\base\accting.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_ACCTI=\
+	".\src\base\base\accting.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_ACCTI=\
+	".\src\base\base\accting.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_ACCTI=\
+	".\src\base\accting.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_ACCTI=\
+	".\src\base\accting.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\base\event.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_EVENT=\
+	".\src\base\base\event.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\modules\odometer.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_EVENT=\
+	".\src\base\base\event.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\modules\odometer.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_EVENT=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\modules\odometer.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_EVENT=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_EVENT=\
+	".\src\base\modules\odometer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\base\events.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_EVENTS=\
+	".\src\base\base\event.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_EVENTS=\
+	".\src\base\base\event.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_EVENTS=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_EVENTS=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_EVENTS=\
+	".\src\modules\odometer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\base\mainloop.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_MAINL=\
+	".\src\base\base\accting.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\mainloop.h"\
+	".\src\base\base\packet.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\base\protocol.h"\
+	".\src\base\base\statcode.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\gps.h"\
+	".\src\base\custom\gpsmods.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\custom\startup.h"\
+	".\src\base\custom\transport.h"\
+	".\src\base\modules\motion.h"\
+	".\src\base\modules\odometer.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\gpstools.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\threads.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_MAINL=\
+	".\src\base\base\accting.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\mainloop.h"\
+	".\src\base\base\packet.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\base\protocol.h"\
+	".\src\base\base\statcode.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\gps.h"\
+	".\src\base\custom\gpsmods.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\custom\startup.h"\
+	".\src\base\custom\transport.h"\
+	".\src\base\modules\motion.h"\
+	".\src\base\modules\odometer.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\gpstools.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\threads.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_MAINL=\
+	".\src\base\accting.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\mainloop.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\gpsmods.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\transport.h"\
+	".\src\custom\transport\socket.h"\
+	".\src\modules\motion.h"\
+	".\src\modules\odometer.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_MAINL=\
+	".\src\custom\custom\transport\file.h"\
+	".\src\custom\custom\transport\gprs.h"\
+	".\src\custom\custom\transport\serial.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_MAINL=\
+	".\src\base\accting.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\mainloop.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\gpsmods.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\transport.h"\
+	".\src\custom\transport\socket.h"\
+	".\src\modules\motion.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_MAINL=\
+	".\src\custom\custom\transport\file.h"\
+	".\src\custom\custom\transport\gprs.h"\
+	".\src\custom\custom\transport\serial.h"\
+	".\src\custom\transport\xport.h"\
+	".\src\modules\odometer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\base\packet.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_PACKE=\
+	".\src\base\base\cerrors.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\packet.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\base64.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\checksum.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_PACKE=\
+	".\src\base\base\cerrors.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\packet.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\base64.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\checksum.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_PACKE=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\base64.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_PACKE=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\base64.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\base\pqueue.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_PQUEU=\
+	".\src\base\base\packet.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\io.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\threads.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_PQUEU=\
+	".\src\base\base\packet.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\io.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\threads.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_PQUEU=\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_PQUEU=\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\base\propman.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_PROPM=\
+	".\src\base\base\packet.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\custprop.inc"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\gpstools.h"\
+	".\src\base\tools\io.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_PROPM=\
+	".\src\base\base\packet.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\custom\custprop.inc"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\bintools.h"\
+	".\src\base\tools\gpstools.h"\
+	".\src\base\tools\io.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_PROPM=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\custprop.inc"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_PROPM=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\custprop.inc"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\base\protocol.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_PROTO=\
+	".\src\base\base\accting.h"\
+	".\src\base\base\cerrors.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\packet.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\base\protocol.h"\
+	".\src\base\base\serrors.h"\
+	".\src\base\base\upload.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\gps.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\custom\transport.h"\
+	".\src\base\modules\motion.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\base64.h"\
+	".\src\base\tools\checksum.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_PROTO=\
+	".\src\base\base\accting.h"\
+	".\src\base\base\cerrors.h"\
+	".\src\base\base\events.h"\
+	".\src\base\base\packet.h"\
+	".\src\base\base\pqueue.h"\
+	".\src\base\base\propman.h"\
+	".\src\base\base\protocol.h"\
+	".\src\base\base\serrors.h"\
+	".\src\base\base\upload.h"\
+	".\src\base\custom\defaults.h"\
+	".\src\base\custom\gps.h"\
+	".\src\base\custom\log.h"\
+	".\src\base\custom\transport.h"\
+	".\src\base\modules\motion.h"\
+	".\src\base\stdafx.h"\
+	".\src\base\tools\base64.h"\
+	".\src\base\tools\checksum.h"\
+	".\src\base\tools\stdtypes.h"\
+	".\src\base\tools\strtools.h"\
+	".\src\base\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_PROTO=\
+	".\src\base\accting.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\base\serrors.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\log.h"\
+	".\src\custom\transport.h"\
+	".\src\custom\transport\socket.h"\
+	".\src\modules\motion.h"\
+	".\src\tools\base64.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_PROTO=\
+	".\src\base\base\upload.h"\
+	".\src\custom\custom\transport\file.h"\
+	".\src\custom\custom\transport\gprs.h"\
+	".\src\custom\custom\transport\serial.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_PROTO=\
+	".\src\base\accting.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\base\serrors.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\transport.h"\
+	".\src\custom\transport\socket.h"\
+	".\src\tools\base64.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_PROTO=\
+	".\src\base\upload.h"\
+	".\src\custom\custom\transport\file.h"\
+	".\src\custom\custom\transport\gprs.h"\
+	".\src\custom\custom\transport\serial.h"\
+	".\src\custom\transport\xport.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "custom"
+
+# PROP Default_Filter ""
+# Begin Group "transport"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\src\custom\transport\socket.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_SOCKE=\
+	".\src\custom\transport\base\packet.h"\
+	".\src\custom\transport\base\propman.h"\
+	".\src\custom\transport\base\props.h"\
+	".\src\custom\transport\custom\defaults.h"\
+	".\src\custom\transport\custom\log.h"\
+	".\src\custom\transport\custom\transport\socket.h"\
+	".\src\custom\transport\custom\wince\wcegprs.h"\
+	".\src\custom\transport\stdafx.h"\
+	".\src\custom\transport\tools\bintools.h"\
+	".\src\custom\transport\tools\comport.h"\
+	".\src\custom\transport\tools\sockets.h"\
+	".\src\custom\transport\tools\stdtypes.h"\
+	".\src\custom\transport\tools\strtools.h"\
+	".\src\custom\transport\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_SOCKE=\
+	".\src\custom\transport\base\packet.h"\
+	".\src\custom\transport\base\propman.h"\
+	".\src\custom\transport\base\props.h"\
+	".\src\custom\transport\custom\defaults.h"\
+	".\src\custom\transport\custom\log.h"\
+	".\src\custom\transport\custom\transport\socket.h"\
+	".\src\custom\transport\custom\wince\wcegprs.h"\
+	".\src\custom\transport\stdafx.h"\
+	".\src\custom\transport\tools\bintools.h"\
+	".\src\custom\transport\tools\comport.h"\
+	".\src\custom\transport\tools\sockets.h"\
+	".\src\custom\transport\tools\stdtypes.h"\
+	".\src\custom\transport\tools\strtools.h"\
+	".\src\custom\transport\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_SOCKE=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\custom\transport.h"\
+	".\src\custom\transport\socket.h"\
+	".\src\custom\wince\wcegprs.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_SOCKE=\
+	".\src\custom\custom\transport\file.h"\
+	".\src\custom\custom\transport\gprs.h"\
+	".\src\custom\custom\transport\serial.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_SOCKE=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\custom\transport\socket.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_SOCKE=\
+	".\src\custom\transport\xport.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "wince"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\src\custom\wince\wcegprs.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+DEP_CPP_WCEGP=\
+	{$(INCLUDE)}"pm.h"\
+	
+NODEP_CPP_WCEGP=\
+	".\src\custom\wince\base\packet.h"\
+	".\src\custom\wince\base\propman.h"\
+	".\src\custom\wince\base\props.h"\
+	".\src\custom\wince\custom\defaults.h"\
+	".\src\custom\wince\custom\log.h"\
+	".\src\custom\wince\custom\startup.h"\
+	".\src\custom\wince\custom\wince\wcegprs.h"\
+	".\src\custom\wince\custom\wince\wceos.h"\
+	".\src\custom\wince\stdafx.h"\
+	".\src\custom\wince\tools\bintools.h"\
+	".\src\custom\wince\tools\comport.h"\
+	".\src\custom\wince\tools\sockets.h"\
+	".\src\custom\wince\tools\stdtypes.h"\
+	".\src\custom\wince\tools\strtools.h"\
+	".\src\custom\wince\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+DEP_CPP_WCEGP=\
+	{$(INCLUDE)}"pm.h"\
+	
+NODEP_CPP_WCEGP=\
+	".\src\custom\wince\base\packet.h"\
+	".\src\custom\wince\base\propman.h"\
+	".\src\custom\wince\base\props.h"\
+	".\src\custom\wince\custom\defaults.h"\
+	".\src\custom\wince\custom\log.h"\
+	".\src\custom\wince\custom\startup.h"\
+	".\src\custom\wince\custom\wince\wcegprs.h"\
+	".\src\custom\wince\custom\wince\wceos.h"\
+	".\src\custom\wince\stdafx.h"\
+	".\src\custom\wince\tools\bintools.h"\
+	".\src\custom\wince\tools\comport.h"\
+	".\src\custom\wince\tools\sockets.h"\
+	".\src\custom\wince\tools\stdtypes.h"\
+	".\src\custom\wince\tools\strtools.h"\
+	".\src\custom\wince\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_WCEGP=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\wince\wcegprs.h"\
+	".\src\custom\wince\wceos.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"pm.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_WCEGP=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\wince\wcegprs.h"\
+	".\src\custom\wince\wceos.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_WCEGP=\
+	".\m.h"\
+	".\src\custom\wince\tools\watchdog.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\custom\wince\wceos.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+DEP_CPP_WCEOS=\
+	{$(INCLUDE)}"pm.h"\
+	
+NODEP_CPP_WCEOS=\
+	".\src\custom\wince\base\props.h"\
+	".\src\custom\wince\custom\defaults.h"\
+	".\src\custom\wince\custom\log.h"\
+	".\src\custom\wince\custom\startup.h"\
+	".\src\custom\wince\custom\wince\wceos.h"\
+	".\src\custom\wince\stdafx.h"\
+	".\src\custom\wince\tools\io.h"\
+	".\src\custom\wince\tools\stdtypes.h"\
+	".\src\custom\wince\tools\strtools.h"\
+	".\src\custom\wince\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+DEP_CPP_WCEOS=\
+	{$(INCLUDE)}"pm.h"\
+	
+NODEP_CPP_WCEOS=\
+	".\src\custom\wince\base\props.h"\
+	".\src\custom\wince\custom\defaults.h"\
+	".\src\custom\wince\custom\log.h"\
+	".\src\custom\wince\custom\startup.h"\
+	".\src\custom\wince\custom\wince\wceos.h"\
+	".\src\custom\wince\stdafx.h"\
+	".\src\custom\wince\tools\io.h"\
+	".\src\custom\wince\tools\stdtypes.h"\
+	".\src\custom\wince\tools\strtools.h"\
+	".\src\custom\wince\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_WCEOS=\
+	".\src\base\cmderrs.h"\
+	".\src\base\packet.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\wince\wceos.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"pm.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_WCEOS=\
+	".\src\base\props.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\wince\wceos.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_WCEOS=\
+	".\m.h"\
+	".\pexport.h"\
+	".\phlpapi.h"\
+	".\ptypes.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE=.\src\custom\gps.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_GPS_C=\
+	".\src\custom\base\events.h"\
+	".\src\custom\base\propman.h"\
+	".\src\custom\base\statcode.h"\
+	".\src\custom\custom\defaults.h"\
+	".\src\custom\custom\gps.h"\
+	".\src\custom\custom\gpsmods.h"\
+	".\src\custom\custom\log.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\checksum.h"\
+	".\src\custom\tools\comport.h"\
+	".\src\custom\tools\stdtypes.h"\
+	".\src\custom\tools\strtools.h"\
+	".\src\custom\tools\threads.h"\
+	".\src\custom\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_GPS_C=\
+	".\src\custom\base\events.h"\
+	".\src\custom\base\propman.h"\
+	".\src\custom\base\statcode.h"\
+	".\src\custom\custom\defaults.h"\
+	".\src\custom\custom\gps.h"\
+	".\src\custom\custom\gpsmods.h"\
+	".\src\custom\custom\log.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\checksum.h"\
+	".\src\custom\tools\comport.h"\
+	".\src\custom\tools\stdtypes.h"\
+	".\src\custom\tools\strtools.h"\
+	".\src\custom\tools\threads.h"\
+	".\src\custom\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_GPS_C=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\gpsmods.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_GPS_C=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\gpsmods.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\custom\gpsmods.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_GPSMO=\
+	".\src\custom\base\events.h"\
+	".\src\custom\custom\defaults.h"\
+	".\src\custom\custom\gps.h"\
+	".\src\custom\custom\gpsmods.h"\
+	".\src\custom\custom\log.h"\
+	".\src\custom\modules\geozone.h"\
+	".\src\custom\modules\motion.h"\
+	".\src\custom\modules\odometer.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\stdtypes.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_GPSMO=\
+	".\src\custom\base\events.h"\
+	".\src\custom\custom\defaults.h"\
+	".\src\custom\custom\gps.h"\
+	".\src\custom\custom\gpsmods.h"\
+	".\src\custom\custom\log.h"\
+	".\src\custom\modules\geozone.h"\
+	".\src\custom\modules\motion.h"\
+	".\src\custom\modules\odometer.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\stdtypes.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_GPSMO=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\gpsmods.h"\
+	".\src\custom\log.h"\
+	".\src\modules\motion.h"\
+	".\src\modules\odometer.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_GPSMO=\
+	".\src\custom\modules\geozone.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_GPSMO=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\gpsmods.h"\
+	".\src\custom\log.h"\
+	".\src\modules\motion.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_GPSMO=\
+	".\src\modules\geozone.h"\
+	".\src\modules\odometer.h"\
+	".\src\modules\thermo.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\custom\log.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+DEP_CPP_LOG_C=\
+	".\src\custom\defaults.h"\
+	
+NODEP_CPP_LOG_C=\
+	".\src\custom\custom\log.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\io.h"\
+	".\src\custom\tools\stdtypes.h"\
+	".\src\custom\tools\strtools.h"\
+	".\src\custom\tools\threads.h"\
+	".\src\custom\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+DEP_CPP_LOG_C=\
+	".\src\custom\defaults.h"\
+	
+NODEP_CPP_LOG_C=\
+	".\src\custom\custom\log.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\io.h"\
+	".\src\custom\tools\stdtypes.h"\
+	".\src\custom\tools\strtools.h"\
+	".\src\custom\tools\threads.h"\
+	".\src\custom\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_LOG_C=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\buffer.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_LOG_C=\
+	".\src\custom\defaults.h"\
+	
+NODEP_CPP_LOG_C=\
+	".\src\custom\custom\log.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\io.h"\
+	".\src\custom\tools\stdtypes.h"\
+	".\src\custom\tools\strtools.h"\
+	".\src\custom\tools\threads.h"\
+	".\src\custom\tools\utctools.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\custom\startup.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+DEP_CPP_START=\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	{$(INCLUDE)}"winuserm.h"\
+	
+NODEP_CPP_START=\
+	".\src\custom\base\accting.h"\
+	".\src\custom\base\cerrors.h"\
+	".\src\custom\base\events.h"\
+	".\src\custom\base\mainloop.h"\
+	".\src\custom\base\propman.h"\
+	".\src\custom\base\protocol.h"\
+	".\src\custom\base\statcode.h"\
+	".\src\custom\base\upload.h"\
+	".\src\custom\custom\defaults.h"\
+	".\src\custom\custom\gps.h"\
+	".\src\custom\custom\gpsmods.h"\
+	".\src\custom\custom\linux\os.h"\
+	".\src\custom\custom\log.h"\
+	".\src\custom\custom\startup.h"\
+	".\src\custom\custom\transport.h"\
+	".\src\custom\custom\wince\wceos.h"\
+	".\src\custom\modules\geozone.h"\
+	".\src\custom\modules\motion.h"\
+	".\src\custom\modules\odometer.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\bintools.h"\
+	".\src\custom\tools\comport.h"\
+	".\src\custom\tools\io.h"\
+	".\src\custom\tools\stdtypes.h"\
+	".\src\custom\tools\strtools.h"\
+	".\src\custom\tools\threads.h"\
+	".\src\custom\tools\utctools.h"\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\emulator\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+DEP_CPP_START=\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	{$(INCLUDE)}"winuserm.h"\
+	
+NODEP_CPP_START=\
+	".\src\custom\base\accting.h"\
+	".\src\custom\base\cerrors.h"\
+	".\src\custom\base\events.h"\
+	".\src\custom\base\mainloop.h"\
+	".\src\custom\base\propman.h"\
+	".\src\custom\base\protocol.h"\
+	".\src\custom\base\statcode.h"\
+	".\src\custom\base\upload.h"\
+	".\src\custom\custom\defaults.h"\
+	".\src\custom\custom\gps.h"\
+	".\src\custom\custom\gpsmods.h"\
+	".\src\custom\custom\linux\os.h"\
+	".\src\custom\custom\log.h"\
+	".\src\custom\custom\startup.h"\
+	".\src\custom\custom\transport.h"\
+	".\src\custom\custom\wince\wceos.h"\
+	".\src\custom\modules\geozone.h"\
+	".\src\custom\modules\motion.h"\
+	".\src\custom\modules\odometer.h"\
+	".\src\custom\stdafx.h"\
+	".\src\custom\tools\bintools.h"\
+	".\src\custom\tools\comport.h"\
+	".\src\custom\tools\io.h"\
+	".\src\custom\tools\stdtypes.h"\
+	".\src\custom\tools\strtools.h"\
+	".\src\custom\tools\threads.h"\
+	".\src\custom\tools\utctools.h"\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\emulator\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_START=\
+	".\src\base\accting.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\mainloop.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\gpsmods.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\custom\transport.h"\
+	".\src\custom\transport\socket.h"\
+	".\src\custom\wince\wceos.h"\
+	".\src\modules\motion.h"\
+	".\src\modules\odometer.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	{$(INCLUDE)}"winuserm.h"\
+	
+NODEP_CPP_START=\
+	".\src\custom\base\upload.h"\
+	".\src\custom\custom\linux\os.h"\
+	".\src\custom\custom\transport\file.h"\
+	".\src\custom\custom\transport\gprs.h"\
+	".\src\custom\custom\transport\serial.h"\
+	".\src\custom\modules\geozone.h"\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\ARMV4\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_START=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\mainloop.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\protocol.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\log.h"\
+	".\src\custom\startup.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_START=\
+	".\src\base\upload.h"\
+	".\src\modules\geozone.h"\
+	".\src\modules\odometer.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "modules"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\src\modules\motion.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_MOTIO=\
+	".\src\modules\base\events.h"\
+	".\src\modules\base\propman.h"\
+	".\src\modules\base\statcode.h"\
+	".\src\modules\custom\defaults.h"\
+	".\src\modules\custom\gps.h"\
+	".\src\modules\custom\log.h"\
+	".\src\modules\modules\motion.h"\
+	".\src\modules\stdafx.h"\
+	".\src\modules\tools\gpstools.h"\
+	".\src\modules\tools\stdtypes.h"\
+	".\src\modules\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_MOTIO=\
+	".\src\modules\base\events.h"\
+	".\src\modules\base\propman.h"\
+	".\src\modules\base\statcode.h"\
+	".\src\modules\custom\defaults.h"\
+	".\src\modules\custom\gps.h"\
+	".\src\modules\custom\log.h"\
+	".\src\modules\modules\motion.h"\
+	".\src\modules\stdafx.h"\
+	".\src\modules\tools\gpstools.h"\
+	".\src\modules\tools\stdtypes.h"\
+	".\src\modules\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_MOTIO=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\log.h"\
+	".\src\modules\motion.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_MOTIO=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\modules\motion.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_MOTIO=\
+	".\src\modules\odometer.h"\
+	".\src\modules\thermo.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\modules\odometer.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_ODOME=\
+	".\src\modules\base\event.h"\
+	".\src\modules\base\propman.h"\
+	".\src\modules\base\statcode.h"\
+	".\src\modules\custom\defaults.h"\
+	".\src\modules\custom\gps.h"\
+	".\src\modules\custom\log.h"\
+	".\src\modules\modules\odometer.h"\
+	".\src\modules\stdafx.h"\
+	".\src\modules\tools\gpstools.h"\
+	".\src\modules\tools\stdtypes.h"\
+	".\src\modules\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_ODOME=\
+	".\src\modules\base\event.h"\
+	".\src\modules\base\propman.h"\
+	".\src\modules\base\statcode.h"\
+	".\src\modules\custom\defaults.h"\
+	".\src\modules\custom\gps.h"\
+	".\src\modules\custom\log.h"\
+	".\src\modules\modules\odometer.h"\
+	".\src\modules\stdafx.h"\
+	".\src\modules\tools\gpstools.h"\
+	".\src\modules\tools\stdtypes.h"\
+	".\src\modules\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_ODOME=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\log.h"\
+	".\src\modules\odometer.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_ODOME=\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\custom\log.h"\
+	".\src\modules\odometer.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "tools"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\src\tools\base64.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_BASE6=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\base64.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_BASE6=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\base64.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_BASE6=\
+	".\src\custom\defaults.h"\
+	".\src\tools\base64.h"\
+	".\src\tools\stdtypes.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_BASE6=\
+	".\src\custom\defaults.h"\
+	".\src\tools\base64.h"\
+	".\src\tools\stdtypes.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\bintools.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_BINTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\bintools.h"\
+	".\src\tools\tools\gpstools.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_BINTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\bintools.h"\
+	".\src\tools\tools\gpstools.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_BINTO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_BINTO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\buffer.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_BUFFE=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\buffer.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_BUFFE=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\buffer.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_BUFFE=\
+	".\src\custom\defaults.h"\
+	".\src\tools\buffer.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_BUFFE=\
+	".\src\custom\defaults.h"\
+	".\src\tools\buffer.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\checksum.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_CHECK=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\checksum.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_CHECK=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\checksum.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_CHECK=\
+	".\src\custom\defaults.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_CHECK=\
+	".\src\custom\defaults.h"\
+	".\src\tools\checksum.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\comport.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_COMPO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\comport.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_COMPO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\comport.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_COMPO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_COMPO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\comport.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_COMPO=\
+	".\s2bth.h"\
+	".\t_api.h"\
+	".\t_sdp.h"\
+	".\thapi.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\gpstools.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_GPSTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\gpstools.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_GPSTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\gpstools.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_GPSTO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_GPSTO=\
+	".\src\custom\defaults.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\io.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_IO_CP=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\io.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\threads.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_IO_CP=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\io.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\threads.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_IO_CP=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_IO_CP=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\io.h"\
+	".\src\tools\stdtypes.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\random.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_RANDO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\random.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_RANDO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\random.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_RANDO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\random.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_RANDO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\random.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\sockets.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_SOCKET=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\sockets.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_SOCKET=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\sockets.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_SOCKET=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_SOCKET=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\sockets.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\strtools.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_STRTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_STRTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\strtools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_STRTO=\
+	".\src\custom\defaults.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_STRTO=\
+	".\src\custom\defaults.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\threads.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+DEP_CPP_THREA=\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"kfuncs.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	{$(INCLUDE)}"winuserm.h"\
+	
+NODEP_CPP_THREA=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\threads.h"\
+	".\src\tools\tools\utctools.h"\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\emulator\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+DEP_CPP_THREA=\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"kfuncs.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	{$(INCLUDE)}"winuserm.h"\
+	
+NODEP_CPP_THREA=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\stdtypes.h"\
+	".\src\tools\tools\strtools.h"\
+	".\src\tools\tools\threads.h"\
+	".\src\tools\tools\utctools.h"\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\emulator\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_THREA=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"kfuncs.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	{$(INCLUDE)}"winuserm.h"\
+	
+NODEP_CPP_THREA=\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\ARMV4\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_THREA=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\tools\utctools.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+NODEP_CPP_UTCTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\threads.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+NODEP_CPP_UTCTO=\
+	".\src\tools\custom\defaults.h"\
+	".\src\tools\custom\log.h"\
+	".\src\tools\stdafx.h"\
+	".\src\tools\tools\threads.h"\
+	".\src\tools\tools\utctools.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_UTCTO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_UTCTO=\
+	".\src\custom\defaults.h"\
+	".\src\custom\log.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE=.\DMTP.cpp
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+DEP_CPP_DMTP_=\
+	".\DMTP.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_DMTP_=\
+	".\inuserm.h"\
+	".\ipapi.h"\
+	".\ygshell.h"\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\emulator\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DMTP_=\
+	".\DMTP.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_DMTP_=\
+	".\inuserm.h"\
+	".\ipapi.h"\
+	".\ygshell.h"\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\emulator\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_DMTP_=\
+	".\DMTP.h"\
+	".\src\base\cerrors.h"\
+	".\src\base\cmderrs.h"\
+	".\src\base\event.h"\
+	".\src\base\events.h"\
+	".\src\base\packet.h"\
+	".\src\base\pqueue.h"\
+	".\src\base\propman.h"\
+	".\src\base\props.h"\
+	".\src\base\statcode.h"\
+	".\src\custom\custprop.h"\
+	".\src\custom\defaults.h"\
+	".\src\custom\gps.h"\
+	".\src\tools\bintools.h"\
+	".\src\tools\gpstools.h"\
+	".\src\tools\stdtypes.h"\
+	".\src\tools\strtools.h"\
+	".\src\tools\threads.h"\
+	".\src\tools\utctools.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"aygshell.h"\
+	{$(INCLUDE)}"sipapi.h"\
+	{$(INCLUDE)}"winuserm.h"\
+	
+NODEP_CPP_DMTP_=\
+	"C:\Program Files\Windows CE Tools\wce420\POCKET PC 2003\Include\ARMV4\vibrate.h"\
+	
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_DMTP_=\
+	".\DMTP.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_DMTP_=\
+	".\ipapi.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\DMTP.rc
+
+!IF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Release"
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE emulator) Debug"
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Release"
+
+!ELSEIF  "$(CFG)" == "DMTP - Win32 (WCE ARMV4) Debug"
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl"
+# Begin Source File
+
+SOURCE=.\DMTP.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\newres.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\resource.h
+# End Source File
+# End Group
+# Begin Group "Resource Files"
+
+# PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+# Begin Source File
+
+SOURCE=.\DMTP.ico
+# End Source File
+# End Group
+# End Target
+# End Project

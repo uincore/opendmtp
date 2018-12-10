@@ -1,0 +1,112 @@
+-----------------------------------------------------------------------------------
+Project: OpenDMTP Reference Implementation - C client 
+URL    : http://www.opendmtp.org
+File   : GumStix.txt
+-----------------------------------------------------------------------------------
+
+The GumStix single board computer (http://www.gumstix.com) makes a good reference
+platform for the OpenDMTP protocol and reference implementation.  With the addition 
+of a GPS device, it can be used to record tracking information which can be 
+transmitted to a backend server, sent over BlueTooth, or recorded onto an SD flash 
+card.
+
+-----------------------------------------------------------------------------------
+Building for the GumStix platform:
+
+The OpenDMTP reference implementation already provides build targets for the GumStix 
+platform.  In order to build the OpenDMTP reference implementation for the GumStix 
+platform, perform the following steps:
+
+  1) Follow the "Programming" documentation on the GumStix website to checkout and 
+     build the toolchain.  This GumStix documentation is currently located at
+       http://www.gumstix.org/tikiwiki/tiki-index.php?page=programming
+       http://docwiki.gumstix.org/Programming
+     Here is a synopsis of the checkout/build process on a current Linux platform:
+       svn co http://svn.gumstix.com/gumstix-buildroot/trunk gumstix-buildroot
+       cd gumstix-buildroot
+       make defconfig
+       make
+     This process can take an hour or 2 to complete, so be patient.
+
+2) Modify the top-level OpenDMTP 'Makefile' and set the makefile variable "GSTX_PATH"
+   to point to the actual location of your checked-out GumStix toolchain.
+
+3) After making your desired customizations to the OpenDMTP project, build the 
+   executable by issuing the following command:
+     make dest=gumstix dmtp
+   The resulting executable ("dmtpd") will be placed in the current directory.
+
+4) Transfer the file to the GumStix platform.  This is best done using an SD flash 
+   card, or via 'scp' over a local network connection (USB, etc.).
+
+5) Start the application on the GumStix.  
+
+-----------------------------------------------------------------------------------
+Configure the GumStix USB for Ethernet:
+
+The GumStix USB port can be configured to be used as an Ethernet connection to a 
+Windows-XP machine by following these steps:
+
+On the GumStix:
+  1) Modify "/etc/network/interfaces":
+     Change:
+         iface usb0 inet dhcp
+     To:
+         iface usb0 inet static
+            address 192.168.100.1
+            netmask 255.255.255.0
+            pre-up /sbin/modprobe g_ether; /sbin/modprobe af_packet
+            post-down /sbin/modprobe -r g_ether
+  2) Reboot
+
+On Windows XP:
+  1) Plug in a USB cable between the GumStix and WindowsXP machine.
+  2) Load the "linux.inf" driver onto Windows-XP.
+      - This can be found in the toolchain at the following location:
+          /gumstix-buildroot/build_arm/linux-2.6.11gum/Documentation/usb/linux.inf
+      - Choose to specify the driver yourself (don't have XP search for it).
+  3) Assign a fixed IP address to the network connection.
+      - Goto "Network Connections" [Control Panel -> Network Connections].
+      - Find the new network connection for the GumStix via USB.
+        (the network connection may present itself as "Local Area Connection 2")
+      - Right-click on the network connection, then select "Properties".
+      - Select "Internet Protocol (TCP/IP)", then click "Properties".
+      - Select "Use the following IP address:"
+      - Enter IP address 192.168.100.2, network mask 255.255.255.0, click "OK".
+      - Turn off the firewall for this network connection.
+  4) Reboot (if necessary).
+  5) Login via "ssh root@192.168.100.1"
+     ('ssh' can be obtained from the Cygwin project. 'PuTTY' can also be used.)
+     
+File transfers to the GumStix can now be performed using 'scp' on a connected
+Windows-XP machine.
+
+-----------------------------------------------------------------------------------
+Automatically starting the 'dmtpd' client at boot time:
+
+The OpenDMTP reference implementation project directory now includes some startup 
+scripts for the GumStix.  These can be found in the directory "gumstix/etc/init.d".  
+The following files are included:
+     gumstix/etc/init.d/S25dmtpd   - automatic upgrade from SD on bootup
+     gumstix/etc/init.d/S60dmtpd   - start/stop script for dmtp client
+     gumstix/etc/init.d/daemon.sh  - common shell init tools
+
+Copy these files to the directory "/etc/init.d/" on your GumStix.
+
+The 'S25dmtpd' script now allows for automatic upgrade from an SD flash card on 
+reboot.  Just place the new 'dmtpd' client executable on an SD flash card in the 
+directory "/install/dmtp/bin/", insert the SD card into the GumStix, and reboot.  
+The new code will be installed, then the boot up process will pass control to 
+'S60dmtpd' to start the new code.
+
+The 'S60dmtpd' script will automatically start the dmtp client when the GumStix 
+reboots.
+
+-----------------------------------------------------------------------------------
+
+Please feel free to contact us regarding problems or issues with the above
+documentation and scripts.
+
+Thanks,
+Martin D. Flynn
+devstaff@opendmtp.org

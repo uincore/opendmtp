@@ -1,0 +1,222 @@
+-----------------------------------------------------------------------------------
+Project: OpenDMTP Reference Implementation - C client 
+URL    : http://www.opendmtp.org
+File   : WEBSERVE.txt
+-----------------------------------------------------------------------------------
+
+This document contains details regarding how to configure OpenDMTP to provide a
+personal web-based mobile GPS tracking service. (See the introductory article at
+"http://www.opendmtp.org/article/webserv/").
+
+For a more full-featured web interface for viewing GPS location maps and 
+information, take a look at the project OpenGTS (Open source GPS Tracking System) 
+at "http://www.opengts.org".
+
+Contents:
+1] Notes
+2] Install/Configure the Server
+3] Install/Configure the Client
+4] Testing the System
+5] Troubleshooting
+6] Contact
+
+-----------------------------------------------------------------------------------
+1] Notes:
+
+- OpenDMTP runs fine on various hardware platforms and on serveral OS flavors
+(including WindowsXP with Cygwin installed).  For the purpose of this document our
+client will be a laptop running a current version of Linux.  Likewise our server 
+will also be a machine with a current version of Linux installed.
+
+- For wireless connectivity, we will be using an attached GPRS modem (BlueTree M2M
+Express GPRS) with a Cingular data plan SIM card.  A PCMCIA wireless airtime card 
+should work as well when using a straight socket connection.
+
+- This configuration uses Google Maps to display the GPS data points.  Before you
+can use the Google Maps JavaScript to display maps, you must first apply for an "API 
+Key" from Google.  Visit "http://www.google.com/apis/maps/signup.html" for more 
+information. (Note: Make sure you fully comply with Google Map's 'Terms of Use').
+
+-----------------------------------------------------------------------------------
+2] Install/Configure the Server:
+
+1) Download the latest OpenDMTP C client:
+   Copy the OpenDMTP C client project 'zip' file to the server and unwrap in a 
+   convenient location.
+
+2) Build 'sockserve':
+   cd to the OpenDMTP C client project directory and build the 'sockserv' binary:
+
+    % make dest=linux sockserv
+    
+3) Configure your web server:
+   Install and configure your web server (Apache is a good choice). No special 
+   configuration is necessary other than serving static HTML files.  You may wish
+   to add other restrictions as necessary to prevent unwanted access.
+   
+4) Install "track.html":
+   From the OpenDMTP C client project directory, copy the file "webserve/track.html" 
+   to the document root of your web server:
+
+    % cp ./webserve/track.html <web_server_doc_root>/.
+    
+   Replace <web_server_doc_root> with the location of the web server document root.
+
+5) Edit "track.html" and insert the Google Maps API key:
+   Visit "http://www.google.com/apis/maps/signup.html" and apply for a "Google Maps
+   API Key".  Place this key in the appropriate area in the "track.html" file 
+   (search for "PLACE_KEY_HERE"). [Note: "track.html" has only been tested on Firefox
+   v1.5.0 and IE v6.0.  If you are using another browser, then additional changes 
+   may be necessary.]
+
+6) Start 'sockserv':
+   From the OpenDMTP directory, start 'sockserve' DMTP service.
+
+    % cd ./build_lin
+    % ./sockserv -tcp 31000 -output <web_server_doc_root>/data.csv csv
+   
+   Replace <web_server_doc_root> with the location of the web server document root.  
+   This command will listen for client connections on TCP port 31000 and will write 
+   received client event data in CSV format to the file "data.csv" in your web server 
+   document root directory (which will later be accessed by 'track.html').
+
+   Important Note: The current version of the server will continue to collect GPS 
+   events and place them in the 'data.csv' file.  No provision is currently in place 
+   to trim this file of old obsolete GPS events.  So you will need to perform this 
+   task manually.  This can be done in a nightly 'cron' job on the system by simply 
+   deleting, or renaming, the file on a nightly basis.
+
+6) Update your firewall/router to forward inbound requests from port 80 (HTTP) and 
+   31000 (DMTP) to your server.  (If necessary, you may wish to add other restrictions 
+   to prevent unwanted access.)
+
+7) Test the routing from outside your local network to your server.  See if you can 
+   specify the URL of your server from an outside browser and get a web page.  Try 
+   to 'telnet' to port 31000 on your server to see if you can connect:
+   
+     % telnet <my_server_host> 31000
+     
+   If you are unable to connect (ie. "connection refused", "could not open...", 
+   etc.), then your router or firewall still needs to be configured.
+   
+   If you are assigned a dynamic IP address from your Internet service provider,
+   you may wish to look into using a service like www.dyndns.com to provide a 
+   static name to your dynamic IP address (see http://www.dyndns.com/services).
+   Most popular broad-band routers will already support these service internally 
+   (ie. NetGear, Linksys, ...).
+
+-----------------------------------------------------------------------------------
+3] Install/Configure the Client:
+
+1) Download the latest OpenDMTP C client:
+   Copy the OpenDMTP project 'zip' file to the client and unwrap in a convenient
+   location.
+
+2) Build 'dmtpd' with GPRS support:
+   cd to the OpenDMTP project directory and build the 'dmtpd' binary with GPRS
+   support:
+   
+    % make dest=linux dmtp_gprs
+   
+   The binary, "dmtpd", will be placed in the directory "./build_lin".
+   
+3) Copy "webserve/props.conf":
+   Make a separate copy of the properties file "webserve/props.conf" to which
+   specific connection parameter changes will be made.
+   
+    % cp webserve/props.conf .
+   
+4) Attach GPS receiver and GPRS modem:
+   Attach the GPS receiver to an available serial port (or USB port if the 
+   appropriate USB to serial port drivers are available), likewise attach the GPRS 
+   modem to an available serial port (note: as of this doument, only the BlueTree 
+   M2M Express GPRS modem has been verified to work with OpenDMTP).  Make note of 
+   the device name (ttyS#, ttyUSB#, or COM#) assigned to the device and modify the 
+   file "./props.conf" accordingly to specify the location of the GPS receiver 
+   ("cfg.gps.port") and GPRS modem ("cfg.xpo.port").
+   IE.
+    ...
+    cfg.xpo.port=ttyS1
+    ...
+    cfg.gps.port=ttyS0
+    ...
+
+3) In the file "./props.conf", specify the hostname or IP address of your remote
+   server.
+   IE.
+    ...
+    com.host=myhostname.xyz
+    com.port=31000
+    ...
+
+   This is the name the client will use to find your server each time it needs to
+   connect.  One, or both of the following may also need to be set to connect to
+   your wireless airtime service provider:
+
+    ...
+    com.apnname=proxy
+    com.apnserv=proxy
+    ...
+   
+3) Start the client program on the laptop:
+
+    % ./build_lin/dmtpd -props ./props.conf
+    
+   (add the "-debug" option when attempting to troubleshoot)
+   
+4) You should see the client immediately attempt to make an initial connection with 
+   the server.  If the client has problems connecting to the server, see the 
+   "Troubleshooting" section below.
+
+-----------------------------------------------------------------------------------
+4] Testing the System:
+
+At this point place the client laptop, attached GPS receiver and GPRS modem, in
+your vehicle and try driving around.  You should see the laptop generate various
+types of motion events and attempt to forward them to your server.
+
+Once back home, you can also try viewing the data on a web-browser by visiting
+your GPS tracking web page:
+
+   http://<my_domain_name>/track.html
+   
+Where <my_domain_name> is the domain-name or IP address of your webserver.
+
+-----------------------------------------------------------------------------------
+5] Troubleshooting:
+
+Problem - The client is unable to connect to the server:
+- Is the GPRS modem attached to the serial port specified in the "./props.conf" 
+  file?  Try using a terminal emulator to see if you can communicate with the 
+  modem directly (115.2Kbps 8N1).  Typing in "AT" should generate an "OK" response.  
+  When starting 'dmtpd' on the client you can view the communication with the GPRS 
+  serial port by setting the "cfg.xpo.debug" property in the "./props.conf" file 
+  to "1".
+- Do you have a valid SIM card (with proper data plan) installed in your GPRS
+  modem?
+- Does the GPRS modem require an external antenna, and is it properly installed?
+- Are you in an area that has GPRS coverage?
+- Is "com.host" set to a valid remote server hostname in "./props.conf"?
+- Does your firewall/router properly route inbound request to port 31000 to your
+  server?
+If you suspect the GPRS modem, try attaching the laptop directly to an Internet 
+connection and build the client with 'socket' support.  If after restarting the 
+client, it still is unable to connect, the problem is likely not with the GPRS 
+modem.
+
+Problem - The client can connect to the server, but the client does not appear 
+to be receiving GPS data.
+- Is the GPS receiver attached to the serial port specified in the 
+  "webserve/props.conf" file?   Try using a terminal emulator to see if you can
+  communicate with the modem directly (4800bps 8N1).  When starting 'dmtpd' on 
+  the client you can view the communication with the GPS serial port by setting 
+  the "cfg.xpo.debug" property in the "./props.conf" file to "1".
+- Are the GPS based parameters specified in "./props.conf" set properly?
+
+-----------------------------------------------------------------------------------
+6] Contact:
+
+If you have any questions or comments, please feel free to contact us at
+devstaff@opendmtp.org
+
+-----------------------------------------------------------------------------------

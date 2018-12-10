@@ -1,0 +1,112 @@
+-----------------------------------------------------------------------------------
+Project: OpenDMTP Reference Implementation - C client 
+URL    : http://www.opendmtp.org
+File   : HW6945.txt
+-----------------------------------------------------------------------------------
+OpenDMTP for the HP iPAQ hw6945 MS Windows Mobile PDA phone
+
+Introduction:
+OpenDMTP C client 1.2.0 is the first version that includes a port for MS Windows CE.
+The included reference implementation has been targeted for the HP iPAQ hw6945 PDA 
+phone which has an internal GPS receiver.  While the underlying OpenDMTP protocol is 
+supported on MS Windows CE/Mobile platforms, the UI for the hw6945 phone is extremely 
+simple and is not really designed as an end-user interface, but is rather to be 
+used as a starting point for continued development efforts to improve the user 
+interface.  Should you wish to contribute your UI skills to the improvement of the
+UI interface on the hw6945 phone, we would welcome your input.
+
+This document should help with building and installing the reference implementation
+on your HP iPAQ hw6945 phone.  It is believed to be complete, but if you happen to 
+find areas that appear unclear, or incomplete, please let us know.
+
+Contents:
+   1) Downloading the required tools.
+   2) Creating the MS Windows CE project directory.
+   3) Building 'DMTP.exe'
+   4) Installing 'DMTP.exe' on the HP iPAQ hw6945.
+   5) Running the OpenDMTP reference implementation.
+   
+-----------------------------------------------------------------------------------
+1) Downloading the required tools.
+
+Fortunately, all of the Microsoft tools that are needed to build and install the
+OpenDMTP reference implementation application on your HP iPAQ hw6945 phone can be 
+downloaded from the Microsoft website for free.
+
+Here is a list of tools that you will need to build the project:
+
+  - ActiveSync
+    http://www.microsoft.com/windowsmobile/activesync/activesync42.mspx
+  - eMbedded Visual C++ 4.0
+    http://www.microsoft.com/downloads/details.aspx?FamilyID=1dacdb3d-50d1-41b2-a107-fa75ae960856&DisplayLang=en
+  - Windows SDK for Windows Mobile 2003-based Pocket PCs (for use with "eMbedded Visual C++ 4.0")
+    http://www.microsoft.com/downloads/details.aspx?familyid=9996b314-0364-4623-9ede-0b5fbb133652&displaylang=en
+  - Windows Mobile 5.0 SDK for Pocket PC (for use with "Visual Studio 2005")
+    http://www.microsoft.com/downloads/details.aspx?familyid=83A52AF2-F524-4EC5-9155-717CBE5D25ED&displaylang=en
+
+Install per instructions provided.  If we've left out a link for a required tool,
+please let us know.
+
+-----------------------------------------------------------------------------------
+2) Creating the MS Windows CE project directory.
+
+From the OpenDMTP_client-c... installation directory, enter the following command:
+  > hw6945.bat
+
+This command will create the directory ".\build_hw6945" containing all the project
+and source files needed to build the project.
+
+-----------------------------------------------------------------------------------
+3) Building 'DMTP.exe'
+
+Using the "eMbedded Visual C++ 4.0" IDE, open the file ".\build_hw6945\DMTP.VCW".
+Once opened, click the "Rebuild All" button.  When complete, the executable file
+".\build_hw6945\ARMV4Rel\DMTP.exe" should be ready to install on your hw6945 phone.
+
+-----------------------------------------------------------------------------------
+4) Installing 'DMTP.exe' on the HP iPAQ hw6945.
+
+Using ActiveSync, create the directory "\DMTP" on the phone and install the executable
+file "DMTP.exe" in this directory.  (Note: Make sure that the "\DMTP" directgory is
+created in the root directory of the device).
+
+Modify the properties file ".\build_hw6945\props.conf" as necessary and install this
+file in the hw6945 "\DMTP" directory as well.
+
+-----------------------------------------------------------------------------------
+5) Running the OpenDMTP reference implementation.
+
+Using the File Explorer on the hw6945, browse to the "\DMTP" directory and launch
+the "DMTP.exe" program (click "OK" to the warning screen which appears).
+
+A very simple user interface will display showing that a Lat/Lon has not yet been
+aquired.  To update the display, click the "Refresh" button (lower right).
+
+The OpenDMTP reference implementation will continue to run in the background, even 
+if other programs are running.
+
+The output log can be captured if you insert an SD card into the phone that has
+the directory "\DMTP" created on the card.  This will appear on the phone as the
+directory "\Storage Card\DMTP\".  The logging output will then be written to the
+file "\Storage Card\DMTP\MESSAGE.log".
+
+NOTE:
+Leaving the GPS receiver on all the time will drain the battery quickly.  It is
+strongly suggested that if the GPS receiver is to be left on, the phone should be
+plugged into an auxiliary power source, such as an automobile cigarette lighter.
+
+-----------------------------------------------------------------------------------
+
+Let us know if you see any discrepancies in the above, or if you need additional
+information.
+
+Thanks,
+Martin D. Flynn
+devstaff@opendmtp.org
+
+-----------------------------------------------------------------------------------
+Trademarks:
+- "Windows CE" and "Windows Mobile" are trademarks of Microsoft Corporation.  For
+  more information on MS Windows Mobilie platforms see the following link:
+    http://www.microsoft.com/windowsmobile/
+- "HP" and "iPAQ" are trademarks of Hewlett Packard.

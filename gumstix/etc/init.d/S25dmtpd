@@ -1,0 +1,30 @@
+#!/bin/sh
+# Upgrade daemon
+
+# --- extract job name
+DAEMON=`echo "$0" | sed 's/^.*S25//'`
+if [ "$DAEMON" = "" -o ! -x "/etc/init.d/S60$DAEMON" ] ; then
+    echo "'/etc/init.d/S60$DAEMON' does not exist"
+    exit 0
+fi
+
+# --- start/stop/upgrade script
+. /etc/init.d/daemon.sh
+
+# --- look at command line options
+case "$1" in
+  start)
+        upgrade_daemon "$DAEMON"
+        ;;
+  stop)
+        # - do nothing
+        ;;
+  restart)
+        upgrade_daemon "$DAEMON"
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?

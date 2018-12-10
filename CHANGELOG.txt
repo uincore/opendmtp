@@ -1,0 +1,166 @@
+-----------------------------------------------------------------------------------
+Project: OpenDMTP Reference Implementation - C client
+URL    : http://www.opendmtp.org
+File   : CHANGELOG.txt
+-----------------------------------------------------------------------------------
+
+Version 1.2.3
+- NEW: Added additional logging for errors returned by 'closedir', 'fflush', 'fclose'
+- NEW: Additional changes made to facilitate 'dual transport' support.
+- CHG: Property 'PROP_COMM_HOST' no longer uses 'localhost' as a default.  Also, if 
+       this property remains undefined during deployment, no events will be queued.
+- CHG: When Geozone arrival/departure 'delay' is in effect, the generated event will
+       be the time and GPS fix of the moment that the geozone boundary crossing was
+       detected.
+
+Version 1.2.2
+- NEW: Added support for reading NMEA-0183 data from external socket port 1155.
+- NEW: Added checking for 'malloc' errors.
+- CHG: Minor changes/additions made to OBC support fields.
+
+Version 1.2.1
+- CHG: Improved checking/settng default device id (now attempts to derive a default
+       device id from the serial number, if a specific device id has not been 
+       defined).
+- CHG: Replaced all occurances of 'utcSleepMS' with 'threadSleepMS'.
+- CHG: Minor changes/additions made to OBC support fields.
+- NEW: Added new custom event field 'FIELD_ODOMETER'
+- FIX: Changed fletcher checksum length to a fixed value of '2' (protocol.c), rather 
+       than using "sizeof(ChecksumFletcher_t)", which is compiler/platform dependent.  
+       (Thanks to Tomasz Rostanski for finding this!).
+- FIX: Increased size of 'heBuf' buffer in call to 'gethostbyname_r' (sockets.c).
+       (Thanks to Tomasz Rostanski for finding this!).
+
+Version 1.2.0
+- NEW: Significant changes have been made to facilitate porting to other platforms.
+- NEW: Initial porting efforts to WindowsCE have been made. Included in this release
+       is support for the new HP hw6945 phone which has an internal GPS receiver.
+- NEW: Many new properties have been added (see 'props.h').
+- NEW: New status codes have been added (see 'statcode.h').
+- NEW: 'utcSetTimeSec'/'utcGetTimeSec' have now been modified to set/get the
+       corrected UTC time, even if 'ENABLE_SET_TIME' has not been defined.
+- NEW: A new threaded logging facility has been implemented.  Previously, a thread
+       issuing a log message would block until the message was written to a file
+       or the console.  The writing of log messages to auxiliary storage (or the
+       console) is now left to the logging thread, allowing the task thread to
+       immediately continue exiecuting.
+- NEW: The protocol handler (protocol.c) can now handle multiple 'virtual' protocol
+       'instances', allowing more than one transport to be attached to the device
+       simultaneously (for monitoring, configuration, etc).
+- CHG: The odometer unit of measurement has changed from 0.1 meters to 1 meters
+       for the following properties:
+           PROP_GPS_ACCURACY, PROP_GPS_DISTANCE_DELTA, 
+           PROP_ODOMETER_#_VALUE, PROP_ODOMETER_#_LIMIT
+       A 0.1 meter resolution did not provide a high enough top-end value that
+       could be represented in 4 bytes.  The change to 1 meter units provides a
+       maximum odometers value increase from about 267K miles (which many vehicles
+       have been able to attain) to about 2.67M miles (we'll beyond the life 
+       expectancey of most vehicles).  And 1 meter resolution is more than enough
+       to provide a very accurate GPS calculated odometer reading (at least well
+       within the accuracy of currently available GPS receivers).  Note that this
+       does not effect the resolution of the reported 'distance' field in the
+       event packets, which is still reported in kilometers.  The odometer module 
+       has been updated to accomodate this resolution change.
+- CHG: Modified the 'pipe' support (used for comport emulation) in "comport.c" to 
+       open the client/server pipes in the proper order to prevent potential
+       dead-lock (for Linux/Cygwin targets only).
+- CHG: PROP_CFG_GPS_MODEL moved from 0xEF22 to 0xEF2A.  This was done to allow
+       other serial port configurations for 0xEFX2 through 0xEFX9.
+- CHG: Renamed "src/tools/socket.[ch]" to "src/tools/sockets.[ch]"
+- CHG: PROP_COMM_APN_SETTINGS moved from 0xF3AA to 0xF3AC.
+- CHG: The elapsed time unit of measurement has changed from milliseconds to
+       seconds for the properties PROP_ELAPSED_#_LIMIT.  This allows the elapsed
+       time seconds to be stored in a single 32-bit integer.
+- CHG: Removed support for non-'malloc'ed event queues (all current reference 
+       implementation platforms support 'malloc').
+- CHG: 'ENABLE_ODOMETER' compile-time var was removed and odometer support was made 
+       part of the the standard configuration.
+- FIX: Fixed sample server function "uploadSendFile" to properly send binary files.
+
+Version 1.1.8
+- CHG: Updated the protocol version property (in 'propman.c') to correctly reflect
+       the change/correction to the protocol specification.
+- NEW: Q&A/FAQ added to README.txt
+
+Version 1.1.7
+- CHG: Relaxed communication property values for Socket communications. Added
+       the config file "debug.conf" to unrestrict all communication settings for
+       use while debug/testing.
+- CHG: Removed uneeded debug messages in geozone testing.
+- CHG: Added compile time tests for multiple TRANSPORT_MEDIA_ definitions.
+- NEW: Added additional GPS parsing to support $GPGSA sentences.
+
+Version 1.1.6
+- NEW: Client now sends 'STATUS_INITIALIZED' event on first GPS fix after startup.
+- NEW: Full featured scalable Geofence/GeoZone arrival departure event generation.
+- CHG: Code refactoring to allow for easier customization.
+- DEL: The OpenDMTP protocol specification document has been removed from this
+       package and moved to its own downloadable package (see the OpenDMTP Protocol
+       Specification).
+
+Version 1.1.5
+- CHG: Reduced/Relaxed the "Connection Accounting" defaults in 'propman.c'.
+- NEW: Added status codes "STATUS_INITIALIZED" and "STATUS_WAYMARK" to the OpenDMTP 
+       protocol.
+- CHG: Minor documentation changes.
+
+Version 1.1.4
+- BUG: Fixed bug where Longitude was not encoded/decoded properly in the Eastern 
+       Hemishpere.  The fix means that longitude values still encoded with prior
+       versions of the C-client will not be parsable with this or subsequent
+       versions.  Make sure all prior cached OpenDMTP packets are parsed before
+       moving to this version (ie. all longitude values have been decoded into
+       their decimal format).
+- CHG: Minor documentation changes.
+
+Version 1.1.3
+- NEW: 'parsfile' now supports GPX output format.
+- NEW: Improved GPS fix "stale" checking.  Client now sends ERROR_GPS_EXPIRED, or
+       ERROR_GPS_FAILURE, if client hasn't received a valid GPS fix in awhile.
+- NEW: When the sample server receives either ERROR_GPS_EXPIRED/ERROR_GPS_FAILURE, 
+       it will request the PROP_STATE_GPS_DIAGNOSTIC property.
+- NEW: Added in-motion/stop-motion event generation feature to allow specifying an
+       option to generate in-motion events only if actually moving, and generate
+       a stop-motion event with the time the stop actually occurred.
+- NEW: Now includes sample serial port server.
+- CHG: Saved state is now written to a separate properties 'state' file, instead
+       of back to the same properties config file.
+- BUG: 'parsfile' incorrectly listed "code" field heading in first CSV column.
+
+Version 1.1.2
+- NEW: Updated 'sockserv' to support writing files in CSV format.
+- NEW: Included "webserve/track.html" as a template for creating web-based GPS 
+       tracking.
+- CHG: Modified 'parsfile' to move data/time fields to beginning of CSV record.
+
+Version 1.1.1
+- NEW: Added support for recognizing 'ttyUSB#' serial devices
+- CHG: "custom/startup.c" option '-debug' now outputs to console (was syslog)
+- CHG: Changed property manager to save properties with key-name reference rather
+       than the key-id (see "base/propman.c"). Also changed file-loaded properties
+       to be marked with KVA_NONDEFAULT attribute (so they'll be saved properly).
+- CHG: Change Linux default make 'dest' to 'linux' (was 'gumstix').
+- BUG: "README.txt" incorrectly referenced make target 'server' instead of 'sockserv'
+- BUG: "custom/startup.c" incorrectly referenced compile-time var 
+       'TRANSPORT_MEDIA_SOCK' instead of 'TRANSPORT_MEDIA_SOCKET'.
+
+Version 1.1.0
+- NEW: Added new PKT_SERVER_FILE_UPLOAD packet to support client file uploading.
+- NEW: Added support for GPRS modem transport media (TRANSPORT_MEDIA_GPRS).
+- NEW: Added PROP_GEOF_ARRIVE_DELAY/PROP_GEOF_DEPART_DELAY properties
+- NEW: Added a simple geofence arrival/departure GPS rule module
+- NEW: Included version 0.0.1 of the OpenDMTP protocol definition manual.
+- CHG: Changed property keyname strings ('base/propman.c')
+- CHG: Renamed sample socket 'server' to 'sockserv'.
+- CHG: Additions/changes to client error codes in 'base/cerrors.h'
+- CHG: Changed 'parsfile' CSV output record format.
+
+Version 1.0.4
+- NEW: Added build documentation for GumStix platform.
+- NEW: Added syslog support for Linux/GumStix
+- CHG: Added additional code documentation.
+- CHG: Threads/Malloc enabled by default (in 'Makefile').
+- BUG: Fixed Linux socket read timeout issue in example 'server'.
+
+Version 1.0.3
+- NEW: First public release
